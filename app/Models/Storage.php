@@ -15,7 +15,7 @@ class Storage extends Model
 
     protected $guarded = ['id'];
 
-    protected $fillable = ['name'];
+    protected $fillable = ['storage_id', 'item_id', 'quantity'];
 
     public function owner(): BelongsTo
     {
