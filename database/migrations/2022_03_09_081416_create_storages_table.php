@@ -15,7 +15,8 @@ class CreateStoragesTable extends Migration
     {
         Schema::create('storages', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 32)->unique();
+            $table->foreignId('user_id')->constrained('users');
+            $table->string('name', 32);
         });
     }
 

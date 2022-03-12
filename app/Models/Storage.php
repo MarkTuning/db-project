@@ -15,11 +15,11 @@ class Storage extends Model
 
     protected $guarded = ['id'];
 
-    protected $fillable = ['storage_id', 'item_id', 'quantity'];
+    protected $fillable = ['user_id', 'name'];
 
     public function owner(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function items(): HasMany
